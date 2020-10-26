@@ -1,0 +1,56 @@
+# Translation of Plugins - Cache Enabler &#8211; WordPress Cache - Development (trunk) in French (France)
+# This file is distributed under the same license as the Plugins - Cache Enabler &#8211; WordPress Cache - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-05-20 06:55:59+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - Cache Enabler &#8211; WordPress Cache - Development (trunk)\n"
+
+#: inc/cache_enabler.class.php:756
+msgid "Empty"
+msgstr "Vide"
+
+#: inc/cache_enabler.class.php:757
+msgid "Cache Size"
+msgstr "Taille du cache"
+
+#. Author of the plugin
+msgid "KeyCDN"
+msgstr "KeyCDN"
+
+#. Author URI of the plugin
+msgid "https://www.keycdn.com"
+msgstr "https://www.keycdn.com"
+
+#. Plugin Name of the plugin
+msgid "Cache Enabler"
+msgstr "Cache Enabler"
+
+#: inc/cache_enabler.class.php:690
+msgid "Settings"
+msgstr "Réglages"
+
+#: inc/cache_enabler.class.php:784
+msgid "Clear Cache"
+msgstr "Vider le cache"
+
+#: inc/cache_enabler.class.php:1670
+msgid "Cache Behavior"
+msgstr "Comportement du cache"
+
+#: inc/cache_enabler.class.php:1763
+msgid "Cache Exclusions"
+msgstr "Exclusions du cache"
+
+#: inc/cache_enabler.class.php:1512 inc/cache_enabler.class.php:1636
+msgid "Cache Enabler Settings"
+msgstr "Réglages de Cache Enabler"
+
+#: inc/cache_enabler.class.php:810 inc/cache_enabler.class.php:811
+msgid "Clear URL Cache"
+msgstr "Vider le cache de l’URL"
