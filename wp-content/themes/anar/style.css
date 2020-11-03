@@ -1,0 +1,17 @@
+/*
+Theme Name: Anar
+Theme URI: 
+Author: 
+Author URI: 
+Description: Thème libre qui bnique le capitalisme !
+Requires at least: WordPress 5.5.3
+Version: 1.0
+*/
+.menu {
+    position: fixed;
+    top: 0px;
+}
+
+.admin-bar .menu {
+	top: 32px; /*On prend en compte le décalage*/
+}
