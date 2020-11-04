@@ -1,6 +1,8 @@
-<?php get_header(); ?>
+<?php
+    get_header();
+    if (have_posts()):while (have_posts()):the_post();
+?>
     <h1><?= single_tag_title('', false) ?></h1>
-    <?php if(have_posts()) : while(have_posts()):the_post(); ?>
         <article class="post">
             <h2><?php the_title(); ?></h2>
             <?php the_post_thumbnail(); ?>

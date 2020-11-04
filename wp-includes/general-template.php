@@ -2990,7 +2990,7 @@ function the_weekday_date( $before = '', $after = '' ) {
 	 * @param string $before           The HTML to output before the date.
 	 * @param string $after            The HTML to output after the date.
 	 */
-	echo apply_filters( 'the_weekday_date', $the_weekday_date, $before, $after );
+	echo apply_filters('the_weekday_date', $the_weekday_date, $before, $after);
 }
 
 /**
@@ -3006,7 +3006,7 @@ function wp_head() {
 	 *
 	 * @since 1.5.0
 	 */
-	do_action( 'wp_head' );
+	do_action('wp_head');
 }
 
 /**
@@ -3022,7 +3022,7 @@ function wp_footer() {
 	 *
 	 * @since 1.5.1
 	 */
-	do_action( 'wp_footer' );
+	do_action('wp_footer');
 }
 
 /**
