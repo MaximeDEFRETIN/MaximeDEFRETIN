@@ -16,6 +16,7 @@
         </div>
         <div class="post__content">
             <?php the_content(); ?>
+            <?php comments_template(); ?>
         </div>
     </article>
 <?php

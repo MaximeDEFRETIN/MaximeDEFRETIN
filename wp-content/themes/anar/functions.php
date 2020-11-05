@@ -1,7 +1,16 @@
 <?php
 
 // Ajouter automatiquement le titre du site dans l'en-tête du site
-add_theme_support('title-tag');
+add_theme_support('title-tag'); 
+
+register_sidebar(array(
+    'id' => 'blog-sidebar',
+    'name' => 'Blog',
+    'before_widget'  => '<div class="site__sidebar__widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title' => '<p class="site__sidebar__widget__title">',
+    'after_title' => '</p>',
+));
 
 function anar_remove_menu_pages() {
     remove_menu_page('tools.php');
