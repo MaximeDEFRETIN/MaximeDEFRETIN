@@ -1,7 +1,8 @@
 <?php
 
 // Ajouter automatiquement le titre du site dans l'en-tête du site
-add_theme_support('title-tag'); 
+add_theme_support('title-tag');
+add_theme_support('menus');
 
 register_sidebar(array(
     'id' => 'blog-sidebar',
@@ -12,16 +13,16 @@ register_sidebar(array(
     'after_title' => '</p>',
 ));
 
-function anar_remove_menu_pages() {
-    remove_menu_page('tools.php');
-    remove_menu_page('edit-comments.php');
-}
-add_action('admin_menu', 'anar_remove_menu_pages');
+//function anar_remove_menu_pages() {
+//    remove_menu_page('tools.php');
+//    remove_menu_page('edit-comments.php');
+//}
+//add_action('admin_menu', 'anar_remove_menu_pages');
 
-register_nav_menus( array(
-	'main' => 'Menu Principal',
-	'footer' => 'Bas de page',
-) );
+register_nav_menus(array(
+    'main' => 'Menu principal',
+    'footer' => 'Bas de page',
+));
 
 // Ajouter la prise en charge des images mises en avant
 add_theme_support('post-thumbnails');
@@ -34,14 +35,31 @@ set_post_thumbnail_size(2000, 400, true);
 
 // Configuration du thème
 require_once get_template_directory().'/inc/config.php';
-
 // Types de publication et taxonomies
 require_once get_template_directory().'/inc/post-types.php';
-
 // Fonctionnalités
 require_once get_template_directory().'/inc/features.php';
 
-function anar_register_assets() {
+function anar_register_style() {
+    // Déclarer style.css à la racine du thème
+    wp_enqueue_style( 
+        'anar',
+        get_stylesheet_uri(), 
+        array(), 
+        '1.0'
+    );
+  	
+    // Déclarer un autre fichier CSS
+    wp_enqueue_style( 
+        'anar', 
+        get_template_directory_uri().'/assets/css/main.css',
+        array(), 
+        '1.0'
+    );
+}
+add_action('wp_enqueue_scripts', 'anar_register_style');
+
+function anar_register_script() {
     // Déclarer jQuery
     wp_enqueue_script( 
         'jquery', 
@@ -59,21 +77,5 @@ function anar_register_assets() {
         '1.0', 
         true
     );
-    
-    // Déclarer style.css à la racine du thème
-    wp_enqueue_style( 
-        'anar',
-        get_stylesheet_uri(), 
-        array(), 
-        '1.0'
-    );
-  	
-    // Déclarer un autre fichier CSS
-    wp_enqueue_style( 
-        'anar', 
-        get_template_directory_uri().'/assets/css/main.css',
-        array(), 
-        '1.0'
-    );
 }
-add_action('wp_enqueue_scripts', 'anar_register_assets');
+add_action('wp_enqueue_scripts', 'anar_register_script');
