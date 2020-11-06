@@ -20,5 +20,5 @@
         </div>
     </article>
 <?php
-endwhile; endif;
-get_footer();
+    endwhile; endif;
+    get_footer();

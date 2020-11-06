@@ -3,6 +3,17 @@
 // Ajouter automatiquement le titre du site dans l'en-tête du site
 add_theme_support('title-tag');
 add_theme_support('menus');
+add_theme_support('custom-logo', array(
+		'flex-height' => true,
+		'flex-width'  => true,
+	));
+add_theme_support('custom-background');
+add_theme_support('editor-styles');
+add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script'));
+add_theme_support('customize-selective-refresh-widgets');
+add_theme_support('automatic-feed-links');
+
+require_once 'inc/customizer/custom-control.php';
 
 register_sidebar(array(
     'id' => 'blog-sidebar',
