@@ -90,3 +90,43 @@ function anar_register_script() {
     );
 }
 add_action('wp_enqueue_scripts', 'anar_register_script');
+
+/**
+ * Permet de créer une CPT
+ */
+//function nanarchiste () {
+//    // CPT Portfolio
+//    $labels = array(
+//        'name' => 'Portfolio', // Nom de la page CPT
+//        'all_items' => 'Projets Portfolio',  // affiché dans le sous menu
+//        'singular_name' => 'Projet',  //
+//        'add_new_item' => 'Ajouter un projet',  // Ajout d'une taxonomie
+//        'edit_item' => 'Modifier le projet',  // Permet d'étiter une taxonomie
+//        'menu_name' => 'Portfolio', // Nom du CPT dans le menu
+//        'new_item_name' => 'Nom du nouveau Projet', // Permet de donner un nom à une taxonomie
+//    	  'parent_item' => 'Type de projet parent', // Permet de créer des items parents
+//    );
+//
+//    $args = array(
+//        'labels' => $labels,
+//        'public' => true,  // Si on accepte que le contenu de la CPT soit affiché, ou non, sur le site
+//        'show_in_rest' => true,  // Active la création d'une taxonomie
+//        'hierarchical' => true,  // permet de créer des hiérarchies
+//        'has_archive' => true,  // On décide si c'est une archive, ou non
+//        'supports' => array('title', 'editor','thumbnail'),  //
+//        'menu_position' => 5,  // Position dans le menu
+//        'menu_icon' => 'dashicons-admin-customizer',  // Icône du CPT
+////  	  'menu_icon' => 'dashicons-portfolio',
+////        'menu_icon' => get_template_directory_uri().'/assets/img/cpt-icon.png',
+////        'menu_icon' => 'data:image/svg+xml;base64,'.base64_encode("<svg>...</svg>"),
+//    );
+//
+//    register_post_type('portfolio', $args);
+//    
+//    register_taxonomy('type-projet', 'portfolio', $args);
+//    
+//    // Assigner à plusieurs CPT
+//    register_taxonomy('type-projet', array('portfolio', 'autre'), $args);
+//    
+//}
+//add_action('init', 'nanarchiste');
