@@ -1,0 +1,325 @@
+[10-Dec-2020 09:41:06 UTC] PHP Deprecated:  get_currentuserinfo est <strong>obsolète</strong> depuis la version 4.5.0 ! Utilisez wp_get_current_user() à la place. in /var/www/MaximeDefretin/wp-includes/functions.php on line 4859
+[10-Dec-2020 09:41:06 UTC] PHP Stack trace:
+[10-Dec-2020 09:41:06 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 09:41:06 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 09:41:06 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 09:41:06 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 09:41:06 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/front-page.php:1
+[10-Dec-2020 09:41:06 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 09:41:06 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 09:41:06 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 09:41:06 UTC] PHP   9. get_currentuserinfo() /var/www/MaximeDefretin/wp-content/themes/anar/header.php:17
+[10-Dec-2020 09:41:06 UTC] PHP  10. _deprecated_function() /var/www/MaximeDefretin/wp-includes/pluggable-deprecated.php:49
+[10-Dec-2020 09:41:06 UTC] PHP  11. trigger_error() /var/www/MaximeDefretin/wp-includes/functions.php:4859
+[10-Dec-2020 09:41:06 UTC] PHP Notice:  Undefined variable: current_user in /var/www/MaximeDefretin/wp-content/themes/anar/header.php on line 18
+[10-Dec-2020 09:41:06 UTC] PHP Stack trace:
+[10-Dec-2020 09:41:06 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 09:41:06 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 09:41:06 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 09:41:06 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 09:41:06 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/front-page.php:1
+[10-Dec-2020 09:41:06 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 09:41:06 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 09:41:06 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 09:41:06 UTC] PHP Notice:  Trying to get property 'user_firstname' of non-object in /var/www/MaximeDefretin/wp-content/themes/anar/header.php on line 18
+[10-Dec-2020 09:41:06 UTC] PHP Stack trace:
+[10-Dec-2020 09:41:06 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 09:41:06 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 09:41:06 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 09:41:06 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 09:41:06 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/front-page.php:1
+[10-Dec-2020 09:41:06 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 09:41:06 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 09:41:06 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 09:41:38 UTC] PHP Deprecated:  get_currentuserinfo est <strong>obsolète</strong> depuis la version 4.5.0 ! Utilisez wp_get_current_user() à la place. in /var/www/MaximeDefretin/wp-includes/functions.php on line 4859
+[10-Dec-2020 09:41:38 UTC] PHP Stack trace:
+[10-Dec-2020 09:41:38 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 09:41:38 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 09:41:38 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 09:41:38 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 09:41:38 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/front-page.php:1
+[10-Dec-2020 09:41:38 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 09:41:38 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 09:41:38 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 09:41:38 UTC] PHP   9. get_currentuserinfo() /var/www/MaximeDefretin/wp-content/themes/anar/header.php:17
+[10-Dec-2020 09:41:38 UTC] PHP  10. _deprecated_function() /var/www/MaximeDefretin/wp-includes/pluggable-deprecated.php:49
+[10-Dec-2020 09:41:38 UTC] PHP  11. trigger_error() /var/www/MaximeDefretin/wp-includes/functions.php:4859
+[10-Dec-2020 09:41:38 UTC] PHP Notice:  Undefined variable: current_user in /var/www/MaximeDefretin/wp-content/themes/anar/header.php on line 18
+[10-Dec-2020 09:41:38 UTC] PHP Stack trace:
+[10-Dec-2020 09:41:38 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 09:41:38 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 09:41:38 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 09:41:38 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 09:41:38 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/front-page.php:1
+[10-Dec-2020 09:41:38 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 09:41:38 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 09:41:38 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 09:41:38 UTC] PHP Notice:  Trying to get property 'user_firstname' of non-object in /var/www/MaximeDefretin/wp-content/themes/anar/header.php on line 18
+[10-Dec-2020 09:41:38 UTC] PHP Stack trace:
+[10-Dec-2020 09:41:38 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 09:41:38 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 09:41:38 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 09:41:38 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 09:41:38 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/front-page.php:1
+[10-Dec-2020 09:41:38 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 09:41:38 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 09:41:38 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 10:07:51 UTC] PHP Deprecated:  get_currentuserinfo est <strong>obsolète</strong> depuis la version 4.5.0 ! Utilisez wp_get_current_user() à la place. in /var/www/MaximeDefretin/wp-includes/functions.php on line 4859
+[10-Dec-2020 10:07:51 UTC] PHP Stack trace:
+[10-Dec-2020 10:07:51 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 10:07:51 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 10:07:51 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 10:07:51 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 10:07:51 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/archive.php:1
+[10-Dec-2020 10:07:51 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 10:07:51 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 10:07:51 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 10:07:51 UTC] PHP   9. get_currentuserinfo() /var/www/MaximeDefretin/wp-content/themes/anar/header.php:17
+[10-Dec-2020 10:07:51 UTC] PHP  10. _deprecated_function() /var/www/MaximeDefretin/wp-includes/pluggable-deprecated.php:49
+[10-Dec-2020 10:07:51 UTC] PHP  11. trigger_error() /var/www/MaximeDefretin/wp-includes/functions.php:4859
+[10-Dec-2020 10:07:51 UTC] PHP Notice:  Undefined variable: current_user in /var/www/MaximeDefretin/wp-content/themes/anar/header.php on line 18
+[10-Dec-2020 10:07:51 UTC] PHP Stack trace:
+[10-Dec-2020 10:07:51 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 10:07:51 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 10:07:51 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 10:07:51 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 10:07:51 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/archive.php:1
+[10-Dec-2020 10:07:51 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 10:07:51 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 10:07:51 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 10:07:51 UTC] PHP Notice:  Trying to get property 'user_firstname' of non-object in /var/www/MaximeDefretin/wp-content/themes/anar/header.php on line 18
+[10-Dec-2020 10:07:51 UTC] PHP Stack trace:
+[10-Dec-2020 10:07:51 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 10:07:51 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 10:07:51 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 10:07:51 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 10:07:51 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/archive.php:1
+[10-Dec-2020 10:07:51 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 10:07:51 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 10:07:51 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 10:10:44 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('comment')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('comment')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('comment', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#8 /var/www/MaximeDefr in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:10:56 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('root')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('root')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('root', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#8 /var/ in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:11:44 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('comment')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('comment')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('comment', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#8 /var/www/MaximeDefr in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:14:10 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('root')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('root')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('root', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#8 /var/ in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:15:22 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('root')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('root')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('root', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#8 /var/ in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:15:52 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('comment')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('comment')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('comment', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#8 /var/www/MaximeDefr in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:19:51 UTC] Matomo: Scheduled tasks archive data
+[10-Dec-2020 10:21:52 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('comment')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('comment')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('comment', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#8 /var/www/MaximeDefr in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:22:52 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('comment')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('comment')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('comment', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#8 /var/www/MaximeDefr in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:24:11 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('comment')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('comment')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('comment', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#8 /var/www/MaximeDefr in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:25:11 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('comment')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('comment')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('comment', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#8 /var/www/MaximeDefr in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:45:22 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('root')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('root')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('root', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#8 /var/ in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:46:13 UTC] YOLOOOOOO !!!
+[10-Dec-2020 10:46:13 UTC] Essaie !
+[10-Dec-2020 10:46:58 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('root')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('root')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('root', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#8 /var/ in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:47:53 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('root')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('root')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('root', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#8 /var/ in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:49:55 UTC] PHP Fatal error:  Uncaught Error: Maximum function nesting level of '256' reached, aborting! in /var/www/MaximeDefretin/wp-includes/formatting.php:2757
+Stack trace:
+#0 /var/www/MaximeDefretin/wp-includes/formatting.php(2757): stripslashes('root')
+#1 /var/www/MaximeDefretin/wp-includes/formatting.php(4931): stripslashes_from_strings_only('root')
+#2 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep('root', 'stripslashes_fr...')
+#3 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#4 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#5 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Array, 'stripslashes_fr...')
+#6 /var/www/MaximeDefretin/wp-includes/formatting.php(4928): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#7 /var/www/MaximeDefretin/wp-includes/formatting.php(4923): map_deep(Object(simple_html_dom_node), 'stripslashes_fr...')
+#8 /var/ in /var/www/MaximeDefretin/wp-includes/formatting.php on line 2757
+[10-Dec-2020 10:50:55 UTC] YOLOOOOOO !!!
+[10-Dec-2020 10:50:55 UTC] Essaie !
+[10-Dec-2020 10:51:10 UTC] PHP Deprecated:  get_currentuserinfo est <strong>obsolète</strong> depuis la version 4.5.0 ! Utilisez wp_get_current_user() à la place. in /var/www/MaximeDefretin/wp-includes/functions.php on line 4859
+[10-Dec-2020 10:51:10 UTC] PHP Stack trace:
+[10-Dec-2020 10:51:10 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 10:51:10 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 10:51:10 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 10:51:10 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 10:51:10 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/single.php:2
+[10-Dec-2020 10:51:10 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 10:51:10 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 10:51:10 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 10:51:10 UTC] PHP   9. get_currentuserinfo() /var/www/MaximeDefretin/wp-content/themes/anar/header.php:17
+[10-Dec-2020 10:51:10 UTC] PHP  10. _deprecated_function() /var/www/MaximeDefretin/wp-includes/pluggable-deprecated.php:49
+[10-Dec-2020 10:51:10 UTC] PHP  11. trigger_error() /var/www/MaximeDefretin/wp-includes/functions.php:4859
+[10-Dec-2020 10:51:10 UTC] PHP Notice:  Undefined variable: current_user in /var/www/MaximeDefretin/wp-content/themes/anar/header.php on line 18
+[10-Dec-2020 10:51:10 UTC] PHP Stack trace:
+[10-Dec-2020 10:51:10 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 10:51:10 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 10:51:10 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 10:51:10 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 10:51:10 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/single.php:2
+[10-Dec-2020 10:51:10 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 10:51:10 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 10:51:10 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 10:51:10 UTC] PHP Notice:  Trying to get property 'user_firstname' of non-object in /var/www/MaximeDefretin/wp-content/themes/anar/header.php on line 18
+[10-Dec-2020 10:51:10 UTC] PHP Stack trace:
+[10-Dec-2020 10:51:10 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 10:51:10 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 10:51:10 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 10:51:10 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 10:51:10 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/single.php:2
+[10-Dec-2020 10:51:10 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 10:51:10 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 10:51:10 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 10:51:51 UTC] PHP Deprecated:  get_currentuserinfo est <strong>obsolète</strong> depuis la version 4.5.0 ! Utilisez wp_get_current_user() à la place. in /var/www/MaximeDefretin/wp-includes/functions.php on line 4859
+[10-Dec-2020 10:51:51 UTC] PHP Stack trace:
+[10-Dec-2020 10:51:51 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 10:51:51 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 10:51:51 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 10:51:51 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 10:51:51 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/single.php:2
+[10-Dec-2020 10:51:51 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 10:51:51 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 10:51:51 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 10:51:51 UTC] PHP   9. get_currentuserinfo() /var/www/MaximeDefretin/wp-content/themes/anar/header.php:17
+[10-Dec-2020 10:51:51 UTC] PHP  10. _deprecated_function() /var/www/MaximeDefretin/wp-includes/pluggable-deprecated.php:49
+[10-Dec-2020 10:51:51 UTC] PHP  11. trigger_error() /var/www/MaximeDefretin/wp-includes/functions.php:4859
+[10-Dec-2020 10:51:51 UTC] PHP Notice:  Undefined variable: current_user in /var/www/MaximeDefretin/wp-content/themes/anar/header.php on line 18
+[10-Dec-2020 10:51:51 UTC] PHP Stack trace:
+[10-Dec-2020 10:51:51 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 10:51:51 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 10:51:51 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 10:51:51 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 10:51:51 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/single.php:2
+[10-Dec-2020 10:51:51 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 10:51:51 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 10:51:51 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 10:51:51 UTC] PHP Notice:  Trying to get property 'user_firstname' of non-object in /var/www/MaximeDefretin/wp-content/themes/anar/header.php on line 18
+[10-Dec-2020 10:51:51 UTC] PHP Stack trace:
+[10-Dec-2020 10:51:51 UTC] PHP   1. {main}() /var/www/MaximeDefretin/index.php:0
+[10-Dec-2020 10:51:51 UTC] PHP   2. require() /var/www/MaximeDefretin/index.php:17
+[10-Dec-2020 10:51:51 UTC] PHP   3. require_once() /var/www/MaximeDefretin/wp-blog-header.php:19
+[10-Dec-2020 10:51:51 UTC] PHP   4. include() /var/www/MaximeDefretin/wp-includes/template-loader.php:106
+[10-Dec-2020 10:51:51 UTC] PHP   5. get_header() /var/www/MaximeDefretin/wp-content/themes/anar/single.php:2
+[10-Dec-2020 10:51:51 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
+[10-Dec-2020 10:51:51 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
+[10-Dec-2020 10:51:51 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 13:09:20 UTC] Matomo: Scheduled tasks archive data

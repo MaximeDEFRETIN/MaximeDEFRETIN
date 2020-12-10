@@ -3,6 +3,9 @@
 [General]
 trusted_hosts[] = "http://maximedefretin"
 
+[Tracker]
+ignore_visits_cookie_name = "piwik_ignore"
+
 [PluginsInstalled]
 PluginsInstalled[] = "Diagnostics"
 PluginsInstalled[] = "Login"
@@ -61,6 +64,7 @@ PluginsInstalled[] = "CustomPiwikJs"
 PluginsInstalled[] = "Tour"
 PluginsInstalled[] = "TagManager"
 PluginsInstalled[] = "WordPress"
-
-[TagManager]
+PluginsInstalled[] = "CustomJsTracker"
+PluginsInstalled[] = "PagePerformance"
+PluginsInstalled[] = "CustomDimensions"
 
