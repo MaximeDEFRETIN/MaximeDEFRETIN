@@ -322,3 +322,4 @@ Stack trace:
 [10-Dec-2020 10:51:51 UTC] PHP   6. locate_template() /var/www/MaximeDefretin/wp-includes/general-template.php:48
 [10-Dec-2020 10:51:51 UTC] PHP   7. load_template() /var/www/MaximeDefretin/wp-includes/template.php:676
 [10-Dec-2020 10:51:51 UTC] PHP   8. require_once() /var/www/MaximeDefretin/wp-includes/template.php:730
+[10-Dec-2020 13:09:20 UTC] Matomo: Scheduled tasks archive data
