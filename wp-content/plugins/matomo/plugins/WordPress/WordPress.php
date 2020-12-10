@@ -36,7 +36,7 @@ class WordPress extends Plugin
     public function registerEvents()
     {
         return array(
-            'API.UsersManager.getTokenAuth' => 'disableApiIfNotBootstrapped',
+            'API.UsersManager.createAppSpecificTokenAuth' => 'disableApiIfNotBootstrapped',
             'Request.dispatch' => 'onDispatchRequest',
             'Request.dispatch.end' => 'onDispatchRequestEnd',
             'User.isNotAuthorized' => array('before' => true, 'function' => 'noAccess'),
@@ -51,7 +51,7 @@ class WordPress extends Plugin
             'API.Tour.getChallenges.end' => 'modifyTourChallenges',
 	        'API.ScheduledReports.generateReport.end' => 'onGenerateReportEnd',
             'Translate.getClientSideTranslationKeys' => 'getClientSideTranslationKeys',
-            'CustomMatomoJs.manipulateJsTracker' => 'updateHeatmapTrackerPath',
+            'CustomJsTracker.manipulateJsTracker' => 'updateHeatmapTrackerPath',
             'Visualization.beforeRender' => 'onBeforeRenderView',
         );
     }
@@ -200,9 +200,14 @@ class WordPress extends Plugin
     		return;
 	    }
 
-        if (strpos($url, 'module=API&method=API.get') !== false
-            && strpos($url, '&trigger=archivephp') !== false
-            && Url::isValidHost(parse_url($url, PHP_URL_HOST))) {
+        if ((strpos($url, 'module=API&method=API.get') !== false
+             && strpos($url, '&trigger=archivephp') !== false
+             && Url::isValidHost(parse_url($url, PHP_URL_HOST)))
+            ||
+            (strpos($url, 'module=API&method=CoreAdminHome.archiveReports') !== false
+             && strpos($url, '&trigger=archivephp') !== false
+             && Url::isValidHost(parse_url($url, PHP_URL_HOST)))
+        ) {
             // archiving query... we avoid issueing an http request for many reasons...
             // eg user might be using self signed certificate and request fails
             // eg http requests may not be allowed
@@ -325,7 +330,10 @@ class WordPress extends Plugin
             array('coreadminhome', 'trackingcodegenerator'),
             array('usersmanager', 'index'),
             array('usersmanager', ''),
+            array('usersmanager', 'addnewtoken'),
             array('usersmanager', 'usersettings'),
+            array('usersmanager', 'deletetoken'),
+            array('usersmanager', 'usersecurity'),
             array('sitesmanager', ''),
             array('sitesmanager', 'globalsettings'),
             array('feedback', ''),

@@ -5,17 +5,17 @@
  * @since      1.5.0
  * @change     1.5.0
  *
- * @generated  26.10.2020 19:23:21
+ * @generated  10.12.2020 09:54:57
  */
 
 return array (
-  'version' => '1.5.5',
+  'version' => '1.6.0',
   'permalink_structure' => 'has_trailing_slash',
   'cache_expires' => 1,
   'cache_expiry_time' => 396,
-  'clear_complete_cache_on_saved_post' => 1,
-  'clear_complete_cache_on_new_comment' => 1,
-  'clear_complete_cache_on_changed_plugin' => 1,
+  'clear_site_cache_on_saved_post' => 1,
+  'clear_site_cache_on_new_comment' => 1,
+  'clear_site_cache_on_changed_plugin' => 1,
   'compress_cache' => 1,
   'convert_image_urls_to_webp' => 0,
   'excluded_post_ids' => '',

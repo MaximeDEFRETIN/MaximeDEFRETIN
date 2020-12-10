@@ -9,20 +9,19 @@
 
 namespace WpMatomo\Admin;
 
-use DeviceDetector\DeviceDetector;
 use Piwik\CliMulti;
 use Piwik\Common;
 use Piwik\Config;
 use Piwik\Container\StaticContainer;
-use Piwik\Date;
 use Piwik\DeviceDetector\DeviceDetectorFactory;
 use Piwik\Filesystem;
-use Piwik\MetricsFormatter;
+use Piwik\Plugin;
 use Piwik\Plugins\CoreAdminHome\API;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Piwik\Plugins\Diagnostics\DiagnosticService;
 use Piwik\Plugins\UserCountry\LocationProvider;
 use Piwik\Tracker\Failures;
+use Piwik\Version;
 use WpMatomo\Bootstrap;
 use WpMatomo\Capabilities;
 use WpMatomo\Installer;
@@ -32,6 +31,7 @@ use WpMatomo\ScheduledTasks;
 use WpMatomo\Settings;
 use WpMatomo\Site;
 use WpMatomo\Site\Sync as SiteSync;
+use WpMatomo\Updater;
 use WpMatomo\User\Sync as UserSync;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -48,10 +48,15 @@ class SystemReport {
 	const TROUBLESHOOT_ARCHIVE_NOW        = 'matomo_troubleshooting_action_archive_now';
 	const TROUBLESHOOT_UPDATE_GEOIP_DB    = 'matomo_troubleshooting_action_update_geoipdb';
 	const TROUBLESHOOT_CLEAR_LOGS         = 'matomo_troubleshooting_action_clear_logs';
+	const TROUBLESHOOT_RUN_UPDATER        = 'matomo_troubleshooting_action_run_updater';
 
 	private $not_compatible_plugins = array(
 		'background-manager', // Uses an old version of Twig and plugin is no longer maintained.
 		'data-tables-generator-by-supsystic', // uses an old version of twig causing some styles to go funny in the reporting and admin
+		'tweet-old-post-pro', // uses a newer version of monolog
+		'secupress', // see #369 depending on setting might have issues
+		'cookiebot', // see https://wordpress.org/support/topic/critical-error-after-upgrade/ conflict re php-di version
+		'wp-rss-aggregator', // see https://wordpress.org/support/topic/critical-error-after-upgrade/ conflict re php-di version
 	);
 
 	private $valid_tabs = array( 'troubleshooting' );
@@ -95,7 +100,7 @@ class SystemReport {
 					if ($idsite) {
 						$timezone = \Piwik\Site::getTimezoneFor($idsite);
 						$now_string = \Piwik\Date::factory('now', $timezone)->toString();
-						foreach (array('day', 'week', 'month') as $period) {
+						foreach (array('day') as $period) {
 							API::getInstance()->invalidateArchivedReports($idsite, $now_string, $period, false, false);
 						}
 					}
@@ -127,6 +132,7 @@ class SystemReport {
 				// going wrong with matomo and bootstrapping would not even be possible.
 				Bootstrap::do_bootstrap();
 				Filesystem::deleteAllCacheOnUpdate();
+				Updater::unlock();
 			}
 
 			if ( ! empty( $_POST[ self::TROUBLESHOOT_UPDATE_GEOIP_DB ] ) ) {
@@ -146,6 +152,11 @@ class SystemReport {
 				if ( ! empty( $_POST[ self::TROUBLESHOOT_SYNC_SITE ] ) ) {
 					$sync = new SiteSync( $this->settings );
 					$sync->sync_current_site();
+				}
+				if ( ! empty( $_POST[ self::TROUBLESHOOT_RUN_UPDATER ] ) ) {
+					Updater::unlock();
+					$sync = new Updater( $this->settings );
+					$sync->update();
 				}
 			}
 			if ( $this->settings->is_network_enabled() ) {
@@ -371,6 +382,33 @@ class SystemReport {
 			'comment' => $install_date,
 		);
 
+		$wpmatomo_updater = new \WpMatomo\Updater($this->settings);
+		if (!\WpMatomo::is_safe_mode()) {
+
+			$outstanding_updates = $wpmatomo_updater->get_plugins_requiring_update();
+			$upgrade_in_progress = $wpmatomo_updater->is_upgrade_in_progress();
+			$rows[] = array(
+				'name'     => 'Upgrades outstanding',
+				'value'    => !empty($outstanding_updates),
+				'comment'  => !empty($outstanding_updates) ? json_encode($outstanding_updates) : '',
+			);
+			$rows[] = array(
+				'name'     => 'Upgrade in progress',
+				'value'    => $upgrade_in_progress,
+				'comment'  => '',
+			);
+		}
+
+		if (!$wpmatomo_updater->load_plugin_functions()) {
+			// this should actually never happen...
+			$rows[] = array(
+				'name'     => 'Matomo Upgrade Plugin Functions',
+				'is_warning'  => true,
+				'value'    => false,
+				'comment'  => 'Function "get_plugin_data" not available. There may be an issue with upgrades not being executed. Please reach out to us.',
+			);
+		}
+
 		$rows[] = array(
 			'section' => 'Endpoints',
 		);
@@ -509,7 +547,21 @@ class SystemReport {
 						}
 					}
 				}
+                $incompatible_plugins = Plugin\Manager::getInstance()->getIncompatiblePlugins(Version::VERSION);
+				if (!empty($incompatible_plugins)) {
+                    $rows[] = array(
+                        'section' => esc_html__( 'Incompatible Matomo plugins', 'matomo' ),
+                    );
+                    foreach ($incompatible_plugins as $plugin) {
+                        $rows[] = array(
+                            'name'    => 'Plugin has missing dependencies',
+                            'value'   => $plugin->getPluginName(),
+                            'is_error' => true,
+                            'comment' => $plugin->getMissingDependenciesAsString(Version::VERSION) . ' If the plugin requires a different Matomo version you may need to update it. If you no longer use it consider uninstalling it.',
+                        );
+                    }
 
+                }
 			}
 
 			$num_days_check_visits = 5;
@@ -587,8 +639,25 @@ class SystemReport {
 					continue;
 				}
 
+				// we only consider plugin_updates as errors only if there are still outstanding updates
+				$is_plugin_update_error = !empty($error['name']) && $error['name'] === 'plugin_update'
+				                          && !empty($outstanding_updates);
+
+				$skip_plugin_update = !empty($error['name']) && $error['name'] === 'plugin_update'
+				                          && empty($outstanding_updates);
+
+				if (empty($error['comment']) && $error['comment'] !== '0') {
+					$error['comment'] = '';
+				}
+
 				$error['value'] = $this->convert_time_to_date( $error['value'], true, false );
 				$error['is_warning'] = !empty($error['name']) && stripos($error['name'], 'archiv') !== false && $error['name'] !== 'archive_boot';
+				$error['is_error'] = $is_plugin_update_error;
+				if ($is_plugin_update_error) {
+					$error['comment'] = 'Please reach out to us and include the copied system report (see https://matomo.org/faq/wordpress/how-do-i-troubleshoot-a-failed-database-upgrade-in-matomo-for-wordpress/ for more info)<br><br>You can also retry the update manually by clicking in the top on the "Troubleshooting" tab and then clicking on the "Run updater" button.' . $error['comment'];
+				} elseif ($skip_plugin_update) {
+					$error['comment'] = 'As there are no outstanding plugin updates it looks like this log can be ignored.<br><br>' . $error['comment'];
+				}
 				$error['comment'] = matomo_anonymize_value($error['comment']);
 				$rows[] = $error;
 			}
@@ -693,8 +762,9 @@ class SystemReport {
 			$date = get_date_from_gmt( $date, 'Y-m-d H:i:s' );
 		}
 
-		if ( $print_diff && class_exists( '\Piwik\MetricsFormatter' ) ) {
-			$date .= ' (' . MetricsFormatter::getPrettyTimeFromSeconds( $time - time(), true, false, true ) . ')';
+		if ( $print_diff && class_exists( '\Piwik\Metrics\Formatter' ) ) {
+			$formatter = new \Piwik\Metrics\Formatter();
+			$date .= ' (' . $formatter->getPrettyTimeFromSeconds( $time - time(), true, false ) . ')';
 		}
 
 		return $date;
@@ -774,7 +844,9 @@ class SystemReport {
 		);
 		$consts = array('WP_DEBUG', 'WP_DEBUG_DISPLAY', 'WP_DEBUG_LOG', 'DISABLE_WP_CRON', 'FORCE_SSL_ADMIN', 'WP_CACHE',
 						'CONCATENATE_SCRIPTS', 'COMPRESS_SCRIPTS', 'COMPRESS_CSS', 'ENFORCE_GZIP', 'WP_LOCAL_DEV',
-						'DIEONDBERROR', 'WPLANG', 'ALTERNATE_WP_CRON', 'WP_CRON_LOCK_TIMEOUT', 'WP_DISABLE_FATAL_ERROR_HANDLER');
+						'DIEONDBERROR', 'WPLANG', 'ALTERNATE_WP_CRON', 'WP_CRON_LOCK_TIMEOUT', 'WP_DISABLE_FATAL_ERROR_HANDLER',
+			'MATOMO_SUPPORT_ASYNC_ARCHIVING', 'MATOMO_TRIGGER_BROWSER_ARCHIVING', 'MATOMO_ENABLE_TAG_MANAGER', 'MATOMO_SUPPRESS_DB_ERRORS', 'MATOMO_ENABLE_AUTO_UPGRADE',
+			'MATOMO_DEBUG', 'MATOMO_SAFE_MODE', 'MATOMO_GLOBAL_UPLOAD_DIR', 'MATOMO_LOGIN_REDIRECT');
 		foreach ($consts as $const) {
 			$rows[] = array(
 				'name'  => $const,
@@ -911,7 +983,14 @@ class SystemReport {
 			'value'   => defined( 'WP_MAX_MEMORY_LIMIT' ) ? WP_MAX_MEMORY_LIMIT : '',
 			'comment' => '',
 		);
-
+		
+		if (function_exists('timezone_version_get')) {
+			$rows[] = array(
+				'name'  => 'Timezone version',
+				'value' => timezone_version_get(),
+			);
+		}
+		
 		$rows[] = array(
 			'name'  => 'Time',
 			'value' => time(),
@@ -1272,11 +1351,28 @@ class SystemReport {
 
 			$used_not_compatible = array_intersect( $active_plugins, $this->not_compatible_plugins );
 			if ( ! empty( $used_not_compatible ) ) {
+
+				$additional_comment = '';
+				if (in_array('tweet-old-post-pro', $used_not_compatible)) {
+					$additional_comment .= '<br><br>A workaround for Revive Old Posts Pro may be to add the following line to your "wp-config.php". <br><code>define( \'MATOMO_SUPPORT_ASYNC_ARCHIVING\', false );</code>.';
+				}
+				if (in_array('secupress', $used_not_compatible)) {
+					$additional_comment .= '<br><br>If reports aren\'t being generated then you may need to disable the feature "Firewall -> Block Bad Request Methods" in SecuPress (if it is enabled) or add the following line to your "wp-config.php": <br><code>define( \'MATOMO_SUPPORT_ASYNC_ARCHIVING\', false );</code>.';
+				}
+
+				$is_warning = true;
+				$is_error = false;
+				if (in_array('cookiebot', $used_not_compatible)) {
+					$is_warning = false;
+					$is_error = true;
+				}
+
 				$rows[] = array(
 					'name'     => __( 'Not compatible plugins', 'matomo' ),
 					'value'    => count( $used_not_compatible ),
-					'comment'  => implode( ', ', $used_not_compatible ) . '<br><br> Matomo may work fine when using these plugins but there may be some issues. For more information see<br>https://matomo.org/faq/wordpress/which-plugins-is-matomo-for-wordpress-known-to-be-not-compatible-with/',
-					'is_warning' => true,
+					'comment'  => implode( ', ', $used_not_compatible ) . '<br><br> Matomo may work fine when using these plugins but there may be some issues. For more information see<br>https://matomo.org/faq/wordpress/which-plugins-is-matomo-for-wordpress-known-to-be-not-compatible-with/ ' . $additional_comment,
+					'is_warning' => $is_warning,
+					'is_error' => $is_error,
 				);
 			}
 		}
