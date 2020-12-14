@@ -1,0 +1,1 @@
+.menu{position:fixed;top:0}.admin-bar .menu{top:32px}li.menu-item,ul.sub-menu{list-style-type:none;display:inline}li ul.sub-menu{display:none}li:hover ul.sub-menu{display:contents}

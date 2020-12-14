@@ -17,6 +17,6 @@
         <?php if (is_user_logged_in()):get_currentuserinfo() ?>
             <span><?= $current_user->user_firstname ?> <a href="<?= wp_logout_url(); ?>">Déconnexion</a></span>
         <?php else: ?>
-            <p><a href="<?= wp_login_url() ?>">Connexion</a></p>;
+            <p><a href="<?= wp_login_url() ?>">Connexion</a></p>
         <?php endif; ?>
         <?php wp_body_open();
